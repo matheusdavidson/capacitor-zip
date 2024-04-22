@@ -1,3 +1,13 @@
 export interface ZipPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  unzip(options: ZipUnzipOptions): Promise<ZipResponse>;
+}
+
+export interface ZipUnzipOptions {
+  source: string;
+  destination: string;
+}
+
+export interface ZipResponse {
+  success: boolean;
+  error?: string;
 }

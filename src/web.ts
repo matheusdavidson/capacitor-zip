@@ -1,10 +1,9 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { ZipPlugin } from './definitions';
+import type { ZipPlugin, ZipResponse } from './definitions';
 
 export class ZipWeb extends WebPlugin implements ZipPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  unzip(): Promise<ZipResponse> {
+    throw this.unimplemented('Method not implemented on web.');
   }
 }
